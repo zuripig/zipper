@@ -5,7 +5,7 @@ pipeline {
             steps {
                 //sh 'echo "hello"'
                 //zip archive: true, dir: '', glob: '', zipFile: 'testzip.zip'
-                zip -r test.zip zipPipe_main
+                zip -r test.zip /zipPipe_main
             }
         }
     }
