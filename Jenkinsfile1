@@ -9,7 +9,7 @@ pipeline {
         stage('Cleanup') {
             steps {
                 sh 'rm -rf .git'
-                sh 'echo ${ZIPNAME}'
+                sh 'echo "${ZIPNAME}"'
             }
         }
         stage('Zip') {
