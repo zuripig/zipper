@@ -1,1 +1,25 @@
+pipeline {
+    agent any
 
+    environment {
+        ZIPNAME = 'date'
+    }
+
+    stages {
+        stage('Cleanup') {
+            steps {
+                sh 'rm -rf .git'
+            }
+        }
+        stage('Zip') {
+            steps {
+                sh zip -r ./ zipped.zip
+            }
+        }
+        stage('Artifact') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
