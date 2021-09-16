@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        ZIPNAME = "$(date +'%d/%m/%Y')"
+        ZIPNAME = "${date +'%d/%m/%Y'}"
     }
 
     stages {
