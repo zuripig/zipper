@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        ZIPNAME = 'date'
+        ZIPNAME = "$(date +'%d/%m/%Y')"
     }
 
     stages {
@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Zip') {
             steps {
-                sh 'zip -r zipped.zip ./'
+                sh 'zip -r "${ZIPNAME}"".zip ./'
             }
         }
         stage('Artifact') {
