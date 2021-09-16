@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Artifact') {
             steps {
-                echo 'Deploying....'
+                archiveArtifacts artifacts: 'zipped.zip', onlyIfSuccessful: true
             }
         }
     }
