@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Zip') {
             steps {
-                sh 'zip -r ./ zipped.zip'
+                sh 'zip -r zipped.zip */'
             }
         }
         stage('Artifact') {
