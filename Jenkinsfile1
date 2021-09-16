@@ -9,11 +9,12 @@ pipeline {
         stage('Cleanup') {
             steps {
                 sh 'rm -rf .git'
+                sh 'echo ${ZIPNAME}'
             }
         }
         stage('Zip') {
             steps {
-                sh 'zip -r "${ZIPNAME}"".zip ./'
+                sh 'zip -r "${ZIPNAME}".zip ./'
             }
         }
         stage('Artifact') {
