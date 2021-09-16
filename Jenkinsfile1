@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        ZIPNAME = "${date +'%d/%m/%Y'}"
+        ZIPNAME = 'sausage'
     }
 
     stages {
@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Artifact') {
             steps {
-                archiveArtifacts artifacts: 'zipped.zip', onlyIfSuccessful: true
+                archiveArtifacts artifacts: '"${ZIPNAME}".zip', onlyIfSuccessful: true
             }
         }
     }
