@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Artifact') {
             steps {
-                archiveArtifacts artifacts: "${ZIPNAME}".zip, onlyIfSuccessful: true
+                archiveArtifacts artifacts: '${ZIPNAME}.zip' onlyIfSuccessful: true
             }
         }
     }
