@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        ZIPNAME = "${BUILD_NUMBER}"
+        ZIPNAME = "build ${BUILD_NUMBER}"
     }
 
     stages {
