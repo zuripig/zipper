@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo building'
+            }
+        }
+        stage('Scan') {
+            steps {
+                sh 'docker scan testimage'
+            }
+        }
+        stage('Artifact') {
+            steps {
+                sh 'echo artifacting'
+            }
+        }
+    }
+}
