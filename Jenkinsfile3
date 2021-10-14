@@ -9,6 +9,7 @@ pipeline {
         }
         stage('Scan') {
             steps {
+                failOnError: false, failOnIssues: false
                 sh 'docker scan testimage'
             }
         }
