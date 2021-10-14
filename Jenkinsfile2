@@ -19,7 +19,6 @@ pipeline {
         stage('Artifact') {
             steps {
                 sh 'echo artifacting'
-       #         archiveArtifacts artifacts: "${ZIPNAME}.zip", onlyIfSuccessful: true
             }
         }
     }
