@@ -9,7 +9,7 @@ pipeline {
         }
         stage('save image') {
             steps {
-                sh 'docker save -o /Users/thomasmccallum/.jenkins/workspace/docker_main/testimage.tar testimage'
+                sh 'docker save -o /Users/thomasmccallum/.jenkins/workspace/docker_main/testimage1.tar testimage'
             }
         }
         stage('Scan') {
