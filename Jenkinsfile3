@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Scan') {
             steps {
-                sh 'snyk container test --json-file-output=scan_result.json --severity-threshold=critical docker-archive:testimage.tar'
+                sh 'snyk container test --sarif-file-output=scan_result.txt --severity-threshold=critical docker-archive:testimage.tar'
             }
         }
         stage('Artifact') {
