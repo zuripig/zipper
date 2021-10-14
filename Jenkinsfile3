@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Artifact') {
             steps {
-                sh 'echo artifacting'
+                archiveArtifacts artifacts: "*.json", onlyIfSuccessful: true
             }
         }
     }
