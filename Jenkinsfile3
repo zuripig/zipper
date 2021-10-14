@@ -9,12 +9,12 @@ pipeline {
         }
         stage('save image') {
             steps {
-                sh 'docker save -o /Users/thomasmccallum/.jenkins/workspace/docker_main/testimage1.tar testimage'
+                sh 'docker save -o /Users/thomasmccallum/.jenkins/workspace/docker_main/testimage.tar testimage'
             }
         }
         stage('Scan') {
             steps {
-                snykSecurity failOnError: false, failOnIssues: false, snykInstallation: 'mySnyk', snykTokenId: 'snykkey'
+                snyk container test --json-file-output=scan_result.json docker-archive:testimage.tar
             }
         }
         stage('Artifact') {
