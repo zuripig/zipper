@@ -1,0 +1,26 @@
+pipeline {
+    agent dockerfile true
+
+    environment {
+        ZIPNAME = "build ${BUILD_NUMBER}"
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo building'
+            }
+        }
+        stage('Scan') {
+            steps {
+                sh 'echo scanning'
+            }
+        }
+        stage('Artifact') {
+            steps {
+                sh 'echo artifacting'
+       #         archiveArtifacts artifacts: "${ZIPNAME}.zip", onlyIfSuccessful: true
+            }
+        }
+    }
+}
