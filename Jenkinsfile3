@@ -7,6 +7,11 @@ pipeline {
                 sh 'docker build -t testimage .'
             }
         }
+        stage('save image') {
+            steps {
+                sh 'docker save -o /Users/thomasmccallum/.jenkins/workspace/docker_main/testimage.tar testimage'
+            }
+        }
         stage('Scan') {
             steps {
                 snykSecurity failOnError: false, failOnIssues: false, snykInstallation: 'mySnyk', snykTokenId: 'snykkey'
