@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Scan') {
             steps {
-                sh 'docker scan f7f7557adf2d38276ead3d72bf63e3bfe9df8e2c'
+                sh 'docker scan testimage'
             }
         }
         stage('Artifact') {
