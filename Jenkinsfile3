@@ -5,12 +5,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'docker build -t testimage .'
-            }
-        }
-        stage('Save image') {
-            steps {
-                sh 'docker save -o /Users/thomasmccallum/.jenkins/workspace/docker_main/testimage.tar testimage'
-            }
         }
         stage('Scan') {
             steps {
