@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Scan') {
             steps {
-                snykSecurity failOnError: false, failOnIssues: false, snykInstallation: 'mySnyk', snykTokenId: 'snykkey'
+                snykSecurity failOnIssues: false, snykInstallation: 'mySnyk', snykTokenId: 'snykkey', targetFile: 'testimage'
             }
         }
         stage('Artifact') {
