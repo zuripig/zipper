@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'docker build -t testimage .'
+            }
         }
         stage('Scan') {
             steps {
