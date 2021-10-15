@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Artifact') {
             steps {
-                archiveArtifacts artifacts: "*.json", onlyIfSuccessful: false
+                archiveArtifacts artifacts: "*.json", onlyIfSuccessful: true
             }
         }
     }
