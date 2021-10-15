@@ -14,12 +14,12 @@ pipeline {
         }
         stage('Scan') {
             steps {
-                sh 'snyk container test --json-file-output=scan_result.json --severity-threshold=critical docker-archive:testimage.tar'
+                sh 'snyk container test --json-file-output=scan_result.json docker-archive:testimage.tar'
             }
         }
         stage('Artifact') {
             steps {
-                archiveArtifacts artifacts: "*.json", onlyIfSuccessful: true
+                archiveArtifacts artifacts: "*.json", onlyIfSuccessful: false
             }
         }
     }
