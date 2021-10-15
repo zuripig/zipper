@@ -9,12 +9,12 @@ pipeline {
         }
         stage('Scan') {
             steps {
-                sh 'snyk container test --json-file-output=scan_result.json testimage || true'
+                sh 'snyk container test --json-file-output=scan_results.json testimage || true'
             }
         }
         stage('Artifact') {
             steps {
-                archiveArtifacts artifacts: "*.json", onlyIfSuccessful: true
+                archiveArtifacts artifacts: "scan_results.json", onlyIfSuccessful: true
             }
         }
         stage('HTML Output') {
