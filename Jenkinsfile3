@@ -17,5 +17,10 @@ pipeline {
                 archiveArtifacts artifacts: "*.json", onlyIfSuccessful: true
             }
         }
+        stage('HTML Output') {
+            steps {
+                snyk-to-html -i scan_results.json -o scan_results.html
+            }
+        }
     }
 }
