@@ -3,6 +3,7 @@ pipeline {
     
     environment {
         FILE_NAME = "scan ${BUILD_NUMBER}"
+        }
 
     stages {
         stage('Build') {
@@ -26,5 +27,4 @@ pipeline {
             }
         }
     }
-}
 }
