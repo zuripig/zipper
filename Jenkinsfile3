@@ -17,12 +17,12 @@ pipeline {
         }
         stage('HTML Output') {
             steps {
-                sh 'snyk-to-html -i "${FILE_NAME}".json -o "${FILE_NAME}".html -a'
+                sh 'snyk-to-html -i ${FILE_NAME}.json -o ${FILE_NAME}.html -a'
             }
         }
         stage('Artifact') {
             steps {
-                archiveArtifacts artifacts: ""${FILE_NAME}".json,"${FILE_NAME}".html", onlyIfSuccessful: true
+                archiveArtifacts artifacts: "${FILE_NAME}.json,${FILE_NAME}.html", onlyIfSuccessful: true
             }
         }
     }
