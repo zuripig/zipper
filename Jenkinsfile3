@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Scan') {
             steps {
-                sh 'snyk container test --json-file-output="${FILE_NAME}".json testimage || true'
+                sh 'snyk container test --json-file-output=${FILE_NAME}.json testimage || true'
             }
         }
         stage('HTML Output') {
