@@ -12,14 +12,14 @@ pipeline {
                 sh 'snyk container test --json-file-output=scan_results.json testimage || true'
             }
         }
-        stage('Artifact') {
-            steps {
-                archiveArtifacts artifacts: "scan_results.json", onlyIfSuccessful: true
-            }
-        }
         stage('HTML Output') {
             steps {
                 sh 'snyk-to-html -i scan_results.json -o scan_results.html -a'
+            }
+        }
+        stage('Artifact') {
+            steps {
+                archiveArtifacts artifacts: "scan_results.json", "scan_result.html, onlyIfSuccessful: true
             }
         }
     }
