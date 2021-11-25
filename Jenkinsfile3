@@ -19,7 +19,7 @@ pipeline {
         }
         stage('HTML Output') {
             steps {
-                sh 'snyk-to-html -i scan_results.json -o scan_results.html -s'
+                sh 'snyk-to-html -i scan_results.json -o scan_results.html -a'
             }
         }
     }
