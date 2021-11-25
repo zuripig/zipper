@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        FILE_NAME = "scan_${BUILD_NUMBER}"
+        FILE_NAME = "scan ${BUILD_NUMBER}"
 
     stages {
         stage('Build') {
