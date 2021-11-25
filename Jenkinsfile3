@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Artifact') {
             steps {
-                archiveArtifacts artifacts: "scan_results.json", "scan_result.html, onlyIfSuccessful: true
+                archiveArtifacts artifacts: "scan_results.json", "scan_result.html", onlyIfSuccessful: true
             }
         }
     }
